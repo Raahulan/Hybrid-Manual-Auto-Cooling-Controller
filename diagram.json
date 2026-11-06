@@ -1,0 +1,143 @@
+{
+  "version": 1,
+  "author": "Project contributor",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-arduino-uno",
+      "id": "uno",
+      "top": 150,
+      "left": 160,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-potentiometer",
+      "id": "pot1",
+      "top": 260,
+      "left": -10,
+      "attrs": {
+        "value": "500"
+      }
+    },
+    {
+      "type": "wokwi-slide-switch",
+      "id": "sw1",
+      "top": 70,
+      "left": 480,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-led",
+      "id": "ledRed",
+      "top": -20,
+      "left": 120,
+      "attrs": {
+        "color": "red"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "ledGreen",
+      "top": -20,
+      "left": 320,
+      "attrs": {
+        "color": "green"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 30,
+      "left": 190,
+      "rotate": 90,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": 30,
+      "left": 385,
+      "rotate": 90,
+      "attrs": {
+        "value": "220"
+      }
+    }
+  ],
+  "connections": [
+    [
+      "pot1:VCC",
+      "uno:5V",
+      "red",
+      []
+    ],
+    [
+      "pot1:GND",
+      "uno:GND.2",
+      "black",
+      []
+    ],
+    [
+      "pot1:SIG",
+      "uno:A0",
+      "gold",
+      []
+    ],
+    [
+      "sw1:1",
+      "uno:5V",
+      "red",
+      []
+    ],
+    [
+      "sw1:2",
+      "uno:2",
+      "green",
+      []
+    ],
+    [
+      "sw1:3",
+      "uno:GND.1",
+      "black",
+      []
+    ],
+    [
+      "uno:13",
+      "r1:2",
+      "green",
+      []
+    ],
+    [
+      "r1:1",
+      "ledRed:A",
+      "green",
+      []
+    ],
+    [
+      "ledRed:C",
+      "uno:GND.1",
+      "black",
+      []
+    ],
+    [
+      "uno:9",
+      "r2:2",
+      "blue",
+      []
+    ],
+    [
+      "r2:1",
+      "ledGreen:A",
+      "blue",
+      []
+    ],
+    [
+      "ledGreen:C",
+      "uno:GND.1",
+      "black",
+      []
+    ]
+  ],
+  "dependencies": {}
+}
